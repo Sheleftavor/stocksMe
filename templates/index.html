@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Quote
+{% endblock %}
+
+{% block main %}
+     <table>
+         <thead>
+             <tr>
+                 <th>Symbol</th>
+                 <th>Name</th>
+                 <th>Shares</th>
+                 <th>Price</th>
+                 <th>TOTAL</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for i in range(0, length) %}
+                 <tr>
+                     <td>{{symbols[i]}}</td>
+                     <td>{{names[i]}}</td>
+                     <td>{{nums[i]}}</td>
+                     <td>{{prices[i]}}</td>
+                     <td>{{total[i]}}</td>
+                 </tr>
+             {% endfor %}
+             <tr>
+                 <td>CASH</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>{{cash}}</td>
+             </tr>
+             <tr>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <th>{{totalCash}}</th>
+             </tr>
+         </tbody>
+     </table>
+{% endblock %}

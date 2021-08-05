@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+         <table>
+         <thead>
+             <tr>
+                 <th></th>
+                 <th>Symbol</th>
+                 <th>Name</th>
+                 <th>Shares</th>
+                 <th>Price</th>
+                 <th>TOTAL</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for i in range(0, length) %}
+                 <tr>
+                     <th>{{oper[i]}}</th>
+                     <td>{{stocks[i]}}</td>
+                     <td>{{names[i]}}</td>
+                     <td>{{shares[i]}}</td>
+                     <td>${{prices[i]}}</td>
+                     {% if totals[i] > 0 %}
+                         <th style="color: #00b900">+${{totals[i]}}</th>
+                     {% else %}
+                         <th style="color: #a91b0d">-${{(totals[i] * -1)}}</th>
+                     {% endif %}
+                 </tr>
+             {% endfor %}
+         </tbody>
+     </table>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    
+    <div class="account-heading-text">Account settings</div>
+        
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        
+    <div class="card-title-account">Change password</div>
+        
+    <hr style="margin-left:20px;height:1.2px;border-width:0;color:#c8c8c8;background-color:#c8c8c8;width:65%">
+        
+    <form action="/settings" method="post">
+        <div style="position:absolute;left:400px;margin-top:-135px">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="oldPass" placeholder="Old password" type="password">
+                <input id="newPass" autocomplete="off" autofocus class="form-control" name="newPass" placeholder="New password" type="password">
+            </div>
+            <p id="passC"></p>
+            <tr>
+            <button id="changePass" class="btn btn-primary" disabled type="submit" name="changeP">Change password</button>
+            </tr>
+        </div>
+        
+        <tr></tr>
+        
+    
+    <div class="card-title-account money">Account balance</div>
+        
+    <hr style="margin-left:20px;height:1.2px;border-width:0;color:#c8c8c8;background-color:#c8c8c8;width:65%">
+    
+    <div class="card-title-account-small">{{balance}}</div>
+    
+    <div class="card-title-account moveLeft">Add balance</div>
+        
+    <hr style="margin-left:20px;height:1.2px;border-width:0;color:#c8c8c8;background-color:#c8c8c8;width:65%">
+    
+        <div style="position:absolute;left:400px">
+            <div class="form-group">
+                <input id="addB" autocomplete="off" autofocus class="form-control " name="addB" type="number" min="100" step="100">  
+                <button id="addButton" class="btn btn-primary addButton" type="submit" name="addBalanceB">Add balance</button>
+            </div>
+        </div>
+    </form>
+    
+    
+    <script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    
+            let newPassword = document.getElementById("newPass");
+            var pattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
+            
+            newPassword.addEventListener('input', function() {
+               $.get('/settings', function() {
+                   button = document.getElementById("changePass")
+                   
+                   if (newPassword.value.length < 8 || newPassword.value.length > 16) {
+                       document.querySelector("#passC").innerHTML = "Password Must Contain Between 8 To 16 Characters.";
+                       button.disabled = true;
+                   }
+                   else if (!pattern.test(newPassword.value)) {
+                       document.querySelector("#passC").innerHTML = "Password Must Contain At Least One Number, One Uppercase Letter And One Lowercase Letter.";
+                       button.disabled = true;
+                   }
+                   else {
+                       document.querySelector("#passC").innerHTML = "";
+                       button.disabled = false;
+                   }
+               });
+            });
+
+    </script>
+{% endblock %}

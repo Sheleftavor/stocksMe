@@ -1,0 +1,190 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+    
+    margin-top: 15px;
+}
+
+.btn
+{
+    margin-top: 10px;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+table 
+{
+    background-color: transparent;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+table th,
+table td 
+{
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgb(179, 208, 255, 0.3)
+}
+
+footer 
+{
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 40px;
+            background: #C8C8C8;
+}
+
+
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-left: 360px;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+.account-heading-text 
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-size: 1.75rem;
+    font-weight: 500;
+    padding: 24px 40px 12px 40px;
+    margin-left: -800px;
+    margin-top: -50px;
+}
+
+.card-title-account {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 30px;
+    margin-left: -800px;
+}
+
+.money
+{
+    margin-top: 150px;
+}
+
+.card-title-account-small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 30px;
+    margin-left: -820px;
+}
+
+.addButton
+{
+   margin-top: -5px; 
+   margin-left: 5px;
+}
+
+.moveLeft
+{
+    margin-left: -830px;
+}
+
+.moveDown
+{
+    margin-top: 10px; 
+}
