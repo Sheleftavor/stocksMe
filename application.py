@@ -62,7 +62,7 @@ def index():
     total = []
     totalUsd = []
     stocks_names = []
-    if symbols != '': 
+    if symbols[0] != '': 
         for i, symbol in enumerate(symbols):
             price = lookup(symbol)["price"]
             priceUsd = usd(float(price))
